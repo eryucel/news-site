@@ -7,10 +7,85 @@
 
 <html>
 <head>
-    <meta name="viewport" content="width=device-width" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
     <title>_Layout</title>
+
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Content/modern-business.css" rel="stylesheet">
 </head>
 <body>
-    @RenderBody()
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">HABER SİTESİ</a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Futbol
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
+                            <a class="dropdown-item" href="portfolio-1-col.html">Fenerbahçe</a>
+                            <a class="dropdown-item" href="portfolio-2-col.html">Galatasaray</a>
+                            <a class="dropdown-item" href="portfolio-3-col.html">Beşiktaş</a>
+                            <a class="dropdown-item" href="portfolio-4-col.html">Trabzonspor</a>
+                            <a class="dropdown-item" href="portfolio-item.html">Milli Takım</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Basketbol
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
+                            <a class="dropdown-item" href="blog-home-1.html">Fenerbahçe</a>
+                            <a class="dropdown-item" href="blog-home-2.html">Anadolu Efes</a>
+                            <a class="dropdown-item" href="blog-post.html">Milli Takım</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Diğer Sporlar</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            İletişim
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
+                            <a class="dropdown-item" href="full-width.html">Instagram</a>
+                            <a class="dropdown-item" href="sidebar.html">Twitter</a>
+                            <a class="dropdown-item" href="faq.html">Facebook</a>
+                            <a class="dropdown-item" href="404.html">Gmail</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+
+                        <a class="nav-link" href="about.html">Üye Ol</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="services.html">Giriş Yap</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+ 
+        @RenderBody()
+    
+   
+    <footer class="py-5 bg-dark">
+        <div class="container">
+            <p class="m-0 text-center text-white">Copyright © HAKME @DateTime.Now.Year</p>
+        </div>
+    </footer>
+    <script src="~/Scripts/jquery.min.js"></script>
+    <script src="~/Scripts/bootstrap.bundle.min.js"></script>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
 </body>
 </html>

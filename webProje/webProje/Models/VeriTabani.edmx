@@ -27,6 +27,7 @@
           <Property Name="Foto" Type="nvarchar(max)" />
           <Property Name="Tarih" Type="smalldatetime" />
           <Property Name="Onay" Type="bit" />
+          <Property Name="Baslik" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Uyeler">
           <Key>
@@ -110,19 +111,19 @@
       <Schema Namespace="haberModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="haberEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Admin" EntityType="haberModel.Admin" />
-          <EntitySet Name="Haber" EntityType="haberModel.Haber" />
           <EntitySet Name="Uyeler" EntityType="haberModel.Uyeler" />
           <EntitySet Name="Yorum" EntityType="haberModel.Yorum" />
+          <AssociationSet Name="FK_Yorum_Uyeler" Association="haberModel.FK_Yorum_Uyeler">
+            <End Role="Uyeler" EntitySet="Uyeler" />
+            <End Role="Yorum" EntitySet="Yorum" />
+          </AssociationSet>
+          <EntitySet Name="Haber" EntityType="haberModel.Haber" />
           <AssociationSet Name="FK_Haber_Admin" Association="haberModel.FK_Haber_Admin">
             <End Role="Admin" EntitySet="Admin" />
             <End Role="Haber" EntitySet="Haber" />
           </AssociationSet>
           <AssociationSet Name="FK_Yorum_Haber" Association="haberModel.FK_Yorum_Haber">
             <End Role="Haber" EntitySet="Haber" />
-            <End Role="Yorum" EntitySet="Yorum" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Yorum_Uyeler" Association="haberModel.FK_Yorum_Uyeler">
-            <End Role="Uyeler" EntitySet="Uyeler" />
             <End Role="Yorum" EntitySet="Yorum" />
           </AssociationSet>
         </EntityContainer>
@@ -138,19 +139,6 @@
           <Property Name="Yetki" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
           <Property Name="UyelikTarihi" Type="DateTime" Precision="0" />
           <NavigationProperty Name="Haber" Relationship="haberModel.FK_Haber_Admin" FromRole="Admin" ToRole="Haber" />
-        </EntityType>
-        <EntityType Name="Haber">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="YazarId" Type="Int32" />
-          <Property Name="Icerik" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Foto" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Tarih" Type="DateTime" Precision="0" />
-          <Property Name="Onay" Type="Boolean" />
-          <NavigationProperty Name="Admin" Relationship="haberModel.FK_Haber_Admin" FromRole="Haber" ToRole="Admin" />
-          <NavigationProperty Name="Yorum" Relationship="haberModel.FK_Yorum_Haber" FromRole="Haber" ToRole="Yorum" />
         </EntityType>
         <EntityType Name="Uyeler">
           <Key>
@@ -174,8 +162,34 @@
           <Property Name="Tarih" Type="DateTime" Precision="0" />
           <Property Name="Haber" Type="Int32" />
           <Property Name="Onay" Type="Boolean" />
-          <NavigationProperty Name="Haber1" Relationship="haberModel.FK_Yorum_Haber" FromRole="Yorum" ToRole="Haber" />
           <NavigationProperty Name="Uyeler" Relationship="haberModel.FK_Yorum_Uyeler" FromRole="Yorum" ToRole="Uyeler" />
+          <NavigationProperty Name="Haber1" Relationship="haberModel.FK_Yorum_Haber" FromRole="Yorum" ToRole="Haber" />
+        </EntityType>
+        <Association Name="FK_Yorum_Uyeler">
+          <End Type="haberModel.Uyeler" Role="Uyeler" Multiplicity="0..1" />
+          <End Type="haberModel.Yorum" Role="Yorum" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Uyeler">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Yorum">
+              <PropertyRef Name="Yazar" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Haber">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="YazarId" Type="Int32" />
+          <Property Name="Icerik" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Foto" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Tarih" Type="DateTime" Precision="0" />
+          <Property Name="Onay" Type="Boolean" />
+          <Property Name="Baslik" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Admin" Relationship="haberModel.FK_Haber_Admin" FromRole="Haber" ToRole="Admin" />
+          <NavigationProperty Name="Yorum" Relationship="haberModel.FK_Yorum_Haber" FromRole="Haber" ToRole="Yorum" />
         </EntityType>
         <Association Name="FK_Haber_Admin">
           <End Type="haberModel.Admin" Role="Admin" Multiplicity="0..1" />
@@ -201,18 +215,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Yorum_Uyeler">
-          <End Type="haberModel.Uyeler" Role="Uyeler" Multiplicity="0..1" />
-          <End Type="haberModel.Yorum" Role="Yorum" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Uyeler">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Yorum">
-              <PropertyRef Name="Yazar" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -228,18 +230,6 @@
                 <ScalarProperty Name="KulAdi" ColumnName="KulAdi" />
                 <ScalarProperty Name="Soyad" ColumnName="Soyad" />
                 <ScalarProperty Name="Ad" ColumnName="Ad" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Haber">
-            <EntityTypeMapping TypeName="haberModel.Haber">
-              <MappingFragment StoreEntitySet="Haber">
-                <ScalarProperty Name="Onay" ColumnName="Onay" />
-                <ScalarProperty Name="Tarih" ColumnName="Tarih" />
-                <ScalarProperty Name="Foto" ColumnName="Foto" />
-                <ScalarProperty Name="Icerik" ColumnName="Icerik" />
-                <ScalarProperty Name="YazarId" ColumnName="YazarId" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -264,6 +254,19 @@
                 <ScalarProperty Name="Tarih" ColumnName="Tarih" />
                 <ScalarProperty Name="Icerik" ColumnName="Icerik" />
                 <ScalarProperty Name="Yazar" ColumnName="Yazar" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Haber">
+            <EntityTypeMapping TypeName="haberModel.Haber">
+              <MappingFragment StoreEntitySet="Haber">
+                <ScalarProperty Name="Baslik" ColumnName="Baslik" />
+                <ScalarProperty Name="Onay" ColumnName="Onay" />
+                <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+                <ScalarProperty Name="Foto" ColumnName="Foto" />
+                <ScalarProperty Name="Icerik" ColumnName="Icerik" />
+                <ScalarProperty Name="YazarId" ColumnName="YazarId" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

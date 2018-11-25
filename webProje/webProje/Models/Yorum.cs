@@ -21,7 +21,7 @@ namespace webProje.Models
         public Nullable<int> Haber { get; set; }
         public Nullable<bool> Onay { get; set; }
     
-        public virtual Haber Haber1 { get; set; }
         public virtual Uyeler Uyeler { get; set; }
+        public virtual Haber Haber1 { get; set; }
     }
 }

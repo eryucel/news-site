@@ -6,12 +6,12 @@
     <edmx:Diagrams>
       <Diagram DiagramId="415173f309c4489c877fa3038c00d3ad" Name="Diagram1">
         <EntityTypeShape EntityType="haberModel.Admin" Width="1.5" PointX="0.75" PointY="1" />
-        <EntityTypeShape EntityType="haberModel.Haber" Width="1.5" PointX="3" PointY="1" />
         <EntityTypeShape EntityType="haberModel.Uyeler" Width="1.5" PointX="3" PointY="5" />
         <EntityTypeShape EntityType="haberModel.Yorum" Width="1.5" PointX="5.25" PointY="1" />
+        <AssociationConnector Association="haberModel.FK_Yorum_Uyeler" />
+        <EntityTypeShape EntityType="haberModel.Haber" Width="1.5" PointX="3" PointY="0.875" />
         <AssociationConnector Association="haberModel.FK_Haber_Admin" />
         <AssociationConnector Association="haberModel.FK_Yorum_Haber" />
-        <AssociationConnector Association="haberModel.FK_Yorum_Uyeler" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

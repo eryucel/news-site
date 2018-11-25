@@ -26,6 +26,7 @@ namespace webProje.Models
         public string Foto { get; set; }
         public Nullable<System.DateTime> Tarih { get; set; }
         public Nullable<bool> Onay { get; set; }
+        public string Baslik { get; set; }
     
         public virtual Admin Admin { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

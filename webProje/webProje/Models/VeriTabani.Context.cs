@@ -26,8 +26,8 @@ namespace webProje.Models
         }
     
         public virtual DbSet<Admin> Admin { get; set; }
-        public virtual DbSet<Haber> Haber { get; set; }
         public virtual DbSet<Uyeler> Uyeler { get; set; }
         public virtual DbSet<Yorum> Yorum { get; set; }
+        public virtual DbSet<Haber> Haber { get; set; }
     }
 }
