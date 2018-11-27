@@ -23,6 +23,7 @@
     <Property Name="Tarih" Type="smalldatetime" />
     <Property Name="Onay" Type="bit" />
     <Property Name="Baslik" Type="nvarchar" MaxLength="50" />
+    <Property Name="OkunmaSayisi" Type="int" />
   </EntityType>
   <EntityType Name="Uyeler">
     <Key>

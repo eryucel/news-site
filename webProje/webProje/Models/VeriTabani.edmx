@@ -28,6 +28,7 @@
           <Property Name="Tarih" Type="smalldatetime" />
           <Property Name="Onay" Type="bit" />
           <Property Name="Baslik" Type="nvarchar" MaxLength="50" />
+          <Property Name="OkunmaSayisi" Type="int" />
         </EntityType>
         <EntityType Name="Uyeler">
           <Key>
@@ -188,6 +189,7 @@
           <Property Name="Tarih" Type="DateTime" Precision="0" />
           <Property Name="Onay" Type="Boolean" />
           <Property Name="Baslik" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OkunmaSayisi" Type="Int32" />
           <NavigationProperty Name="Admin" Relationship="haberModel.FK_Haber_Admin" FromRole="Haber" ToRole="Admin" />
           <NavigationProperty Name="Yorum" Relationship="haberModel.FK_Yorum_Haber" FromRole="Haber" ToRole="Yorum" />
         </EntityType>
@@ -261,6 +263,7 @@
           <EntitySetMapping Name="Haber">
             <EntityTypeMapping TypeName="haberModel.Haber">
               <MappingFragment StoreEntitySet="Haber">
+                <ScalarProperty Name="OkunmaSayisi" ColumnName="OkunmaSayisi" />
                 <ScalarProperty Name="Baslik" ColumnName="Baslik" />
                 <ScalarProperty Name="Onay" ColumnName="Onay" />
                 <ScalarProperty Name="Tarih" ColumnName="Tarih" />

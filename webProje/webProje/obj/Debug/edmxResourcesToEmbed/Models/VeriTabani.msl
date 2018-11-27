@@ -41,6 +41,7 @@
     <EntitySetMapping Name="Haber">
       <EntityTypeMapping TypeName="haberModel.Haber">
         <MappingFragment StoreEntitySet="Haber">
+          <ScalarProperty Name="OkunmaSayisi" ColumnName="OkunmaSayisi" />
           <ScalarProperty Name="Baslik" ColumnName="Baslik" />
           <ScalarProperty Name="Onay" ColumnName="Onay" />
           <ScalarProperty Name="Tarih" ColumnName="Tarih" />

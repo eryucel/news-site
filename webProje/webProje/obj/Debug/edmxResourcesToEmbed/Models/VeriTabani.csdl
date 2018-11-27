@@ -79,6 +79,7 @@
     <Property Name="Tarih" Type="DateTime" Precision="0" />
     <Property Name="Onay" Type="Boolean" />
     <Property Name="Baslik" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="OkunmaSayisi" Type="Int32" />
     <NavigationProperty Name="Admin" Relationship="haberModel.FK_Haber_Admin" FromRole="Haber" ToRole="Admin" />
     <NavigationProperty Name="Yorum" Relationship="haberModel.FK_Yorum_Haber" FromRole="Haber" ToRole="Yorum" />
   </EntityType>
