@@ -1,4 +1,5 @@
-﻿@{
+﻿@model WebProje.Models.HomeIndexViewModel
+@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -11,23 +12,23 @@
         </ol>
         <div class="carousel-inner" role="listbox">
             <!-- Slide One - Set the background image for this slide in the line below -->
-            <div class="carousel-item" style="background-image: url('')">
+            <div class="carousel-item" style="background-image: url('@Model.Haber.ElementAt(Model.Haber.Count-1).Foto')">
                 <div class="carousel-caption d-none d-md-block">
-                    <h3>bos</h3>
+                    <h3>@Model.Haber.ElementAt(Model.Haber.Count() - 1).Baslik</h3>
 
                 </div>
             </div>
             <!-- Slide Two - Set the background image for this slide in the line below -->
-            <div class="carousel-item active" style="background-image: url('')">
+            <div class="carousel-item active" style="background-image: url('@Model.Haber.ElementAt(Model.Haber.Count-2).Foto')">
                 <div class="carousel-caption d-none d-md-block">
-                    <h3>bos</h3>
+                    <h3>@Model.Haber.ElementAt(Model.Haber.Count() - 2).Baslik</h3>
 
                 </div>
             </div>
             <!-- Slide Three - Set the background image for this slide in the line below -->
-            <div class="carousel-item" style="background-image: url('')">
+            <div class="carousel-item" style="background-image: url('@Model.Haber.ElementAt(Model.Haber.Count() - 3).Foto')">
                 <div class="carousel-caption d-none d-md-block">
-                    <h3>bos</h3>
+                    <h3>@Model.Haber.ElementAt(Model.Haber.Count() - 3).Baslik</h3>
                 </div>
             </div>
         </div>
@@ -91,10 +92,10 @@
     <div class="row">
         <div class="col-lg-4 col-sm-6 portfolio-item">
             <div class="card h-100">
-                <a href="#"><img class="card-img-top" src="" alt=""></a>
+                <a href="#"><img class="card-img-top" src="@Model.Haber.ElementAt(Model.Haber.Count() - 1).Foto" alt=""></a>
                 <div class="card-body">
                     <h4 class="card-title">
-                        <a href="#">bos</a>
+                        <a href="#">@Model.Haber.ElementAt(Model.Haber.Count() - 1).Baslik</a>
                 </h4>
 
             </div>
@@ -102,10 +103,10 @@
     </div>
     <div class="col-lg-4 col-sm-6 portfolio-item">
         <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="" alt=""></a>
+            <a href="#"><img class="card-img-top" src="@Model.Haber.ElementAt(Model.Haber.Count() - 2).Foto" alt=""></a>
             <div class="card-body">
                 <h4 class="card-title">
-                    <a href="#">bos</a>
+                    <a href="#">@Model.Haber.ElementAt(Model.Haber.Count() - 2).Baslik</a>
                 </h4>
 
             </div>
@@ -113,10 +114,10 @@
     </div>
     <div class="col-lg-4 col-sm-6 portfolio-item">
         <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="" alt=""></a>
+            <a href="#"><img class="card-img-top" src="@Model.Haber.ElementAt(Model.Haber.Count() - 3).Foto" alt=""></a>
             <div class="card-body">
                 <h4 class="card-title">
-                    <a href="#">bos</a>
+                    <a href="#">@Model.Haber.ElementAt(Model.Haber.Count() - 3).Baslik</a>
                 </h4>
 
             </div>
@@ -124,10 +125,10 @@
     </div>
     <div class="col-lg-4 col-sm-6 portfolio-item">
         <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="" alt=""></a>
+            <a href="#"><img class="card-img-top" src="@Model.Haber.ElementAt(Model.Haber.Count() - 4).Foto" alt=""></a>
             <div class="card-body">
                 <h4 class="card-title">
-                    <a href="#">bos</a>
+                    <a href="#">@Model.Haber.ElementAt(Model.Haber.Count() - 4).Baslik</a>
                 </h4>
 
             </div>
@@ -135,10 +136,10 @@
     </div>
     <div class="col-lg-4 col-sm-6 portfolio-item">
         <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="" alt=""></a>
+            <a href="#"><img class="card-img-top" src="@Model.Haber.ElementAt(Model.Haber.Count() - 5).Foto" alt=""></a>
             <div class="card-body">
                 <h4 class="card-title">
-                    <a href="#">bos</a>
+                    <a href="#">@Model.Haber.ElementAt(Model.Haber.Count() - 5).Baslik</a>
                 </h4>
 
             </div>
@@ -146,10 +147,10 @@
     </div>
     <div class="col-lg-4 col-sm-6 portfolio-item">
         <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="" alt=""></a>
+            <a href="#"><img class="card-img-top" src="@Model.Haber.ElementAt(Model.Haber.Count() - 6).Foto" alt=""></a>
             <div class="card-body">
                 <h4 class="card-title">
-                    <a href="#">bos</a>
+                    <a href="#">@Model.Haber.ElementAt(Model.Haber.Count() - 6).Baslik</a>
                 </h4>
 
             </div>
