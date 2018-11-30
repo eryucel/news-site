@@ -7,7 +7,7 @@ namespace WebProje.Models
 {
     public class Admin
     {
-        public int AdminId { get; set; }
+        public int AdminID { get; set; }
         public string Ad { get; set; }
         public string Soyad { get; set; }
         public string KulAdi { get; set; }

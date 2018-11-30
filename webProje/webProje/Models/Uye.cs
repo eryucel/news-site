@@ -7,7 +7,7 @@ namespace WebProje.Models
 {
     public class Uye
     {
-        public int UyeId { get; set; }
+        public int UyeID { get; set; }
         public string Ad { get; set; }
         public string Soyad { get; set; }
         public string KulAdi { get; set; }

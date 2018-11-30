@@ -7,8 +7,8 @@ namespace WebProje.Models
 {
     public class Yorum
     {
-        public int YorumId { get; set; }
-        public int UyeId { get; set; }
+        public int YorumID { get; set; }
+        public int UyeID { get; set; }
         public int HaberId { get; set; }
         public string Icerik { get; set; }
         public DateTime YorumTarihi { get; set; }

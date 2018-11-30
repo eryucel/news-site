@@ -7,8 +7,9 @@ namespace WebProje.Models
 {
     public class Haber
     {
-        public int HaberId { get; set; }
-        public int AdminId { get; set; }
+        public int HaberID { get; set; }
+        public int AdminID { get; set; }
+        public int YorumID { get; set; }
         public string Icerik { get; set; }
         public string Foto { get; set; }
         public DateTime? HaberTarihi { get; set; }
