@@ -9,7 +9,6 @@ namespace WebProje.Models
     {
         public int HaberID { get; set; }
         public int AdminID { get; set; }
-        public int YorumID { get; set; }
         public string Icerik { get; set; }
         public string Foto { get; set; }
         public DateTime? HaberTarihi { get; set; }
