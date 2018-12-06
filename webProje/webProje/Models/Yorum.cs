@@ -13,7 +13,6 @@ namespace WebProje.Models
         public string Icerik { get; set; }
         public DateTime YorumTarihi { get; set; }
         public bool? Onay { get; set; }
-        //Alttaki ikili foreign key olmasını sağlıyor.
         public virtual Uye Uye { get; set; }
         public virtual Haber Haber { get; set; }
     }

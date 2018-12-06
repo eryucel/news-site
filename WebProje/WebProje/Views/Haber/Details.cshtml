@@ -1,18 +1,26 @@
 ﻿@model WebProje.Models.Haber
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Detaylar";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h2>Details</h2>
+<h2>Detaylar</h2>
 
 <div>
     <h4>Haber</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Admin.Ad)
+            @Html.DisplayNameFor(model => model.Baslik)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Baslik)
+        </dd>
+
+        <dt>
+            Ekleyen Kişi
         </dt>
 
         <dd>
@@ -20,11 +28,12 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Icerik)
+            Haber
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Icerik)
+            @Html.TextAreaFor(model => model.Icerik,new { @readonly = "readonly" ,Class ="form-control" })
+            @*@Html.DisplayFor(model => model.Icerik)*@
         </dd>
 
         <dt>
@@ -56,15 +65,20 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Onay)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Baslik)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Baslik)
+            @{
+                if (Model.Onay == null)
+                {
+                    @("Belirtilmemiş");
+                }
+                else if (Model.Onay == true)
+                {
+                    @("Onaylanmış");
+                }
+                else
+                {
+                    @("Onaylanmamış")
+                }
+            }
         </dd>
 
         <dt>
@@ -78,6 +92,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.HaberID }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Düzenle", "Edit", new { id = Model.HaberID }) |
+    @Html.ActionLink("Listeye geri dön", "Index")
 </p>

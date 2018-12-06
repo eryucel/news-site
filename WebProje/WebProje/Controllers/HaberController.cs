@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using WebProje.DAL;
 using WebProje.Models;
+using PagedList;
 
 namespace WebProje.Controllers
 {
@@ -16,11 +17,101 @@ namespace WebProje.Controllers
         private VeriContext db = new VeriContext();
 
         // GET: Haber
-        public ActionResult Index()
+        public ViewResult Index(string sortOrder, string currentFilter, string searchString, int? page)
         {
-            var haberler = db.Haberler.Include(h => h.Admin);
-            return View(haberler.ToList());
+            ViewBag.CurrentSort = sortOrder;
+            ViewBag.BaslikSortParm = String.IsNullOrEmpty(sortOrder) ? "AzalanBaslik" : "";
+            ViewBag.TarihSortParm = sortOrder == "Tarih" ? "AzalanTarih" : "Tarih";
+            ViewBag.OkunmaSortParm = sortOrder == "Okunma" ? "AzalanOkunma" : "Okunma";
+            ViewBag.OnaySortParm = sortOrder == "Onay" ? "AzalanOnay" : "Onay";
+            ViewBag.KategoriSortParm = sortOrder == "Kategori" ? "AzalanKategori" : "Kategori";
+            ViewBag.EkleyenSortParm = sortOrder == "Ekleyen" ? "AzalanEkleyen" : "Ekleyen";
+            if (searchString != null)
+            {
+                page = 1;
+            }
+            else
+            {
+                searchString = currentFilter;
+            }
+
+            ViewBag.CurrentFilter = searchString;
+
+            var haberler = from s in db.Haberler
+                           select s;
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                haberler = haberler.Where(s => s.Baslik.Contains(searchString));
+            }
+            switch (sortOrder)
+            {
+                case "Onay":
+                    haberler = haberler.OrderBy(s => s.Onay);
+                    break;
+                case "AzalanOnay":
+                    haberler = haberler.OrderByDescending(s => s.Onay);
+                    break;
+                case "Kategori":
+                    haberler = haberler.OrderBy(s => s.Kategori);
+                    break;
+                case "AzalanKategori":
+                    haberler = haberler.OrderByDescending(s => s.Kategori);
+                    break;
+                case "Ekleyen":
+                    haberler = haberler.OrderBy(s => s.Admin.Ad);
+                    break;
+                case "AzalanEkleyen":
+                    haberler = haberler.OrderByDescending(s => s.Admin.Ad);
+                    break;
+                case "Okunma":
+                    haberler = haberler.OrderBy(s => s.OkunmaSayisi);
+                    break;
+                case "AzalanOkunma":
+                    haberler = haberler.OrderByDescending(s => s.OkunmaSayisi);
+                    break;
+                case "AzalanBaslik":
+                    haberler = haberler.OrderByDescending(s => s.Baslik);
+                    break;
+                case "Tarih":
+                    haberler = haberler.OrderBy(s => s.HaberTarihi);
+                    break;
+                case "AzalanTarih":
+                    haberler = haberler.OrderByDescending(s => s.HaberTarihi);
+                    break;
+                default:  // Name ascending 
+                    haberler = haberler.OrderBy(s => s.HaberTarihi);
+                    break;
+            }
+
+            int pageSize = 5;
+            int pageNumber = (page ?? 1);
+            return View(haberler.ToPagedList(pageNumber, pageSize));
         }
+        /* public ActionResult Index(string currentFilter, string searchString, int? page)
+         {
+             if (searchString != null)
+             {
+                 page = 1;
+             }
+             else
+             {
+                 searchString = currentFilter;
+             }
+
+             ViewBag.CurrentFilter = searchString;
+
+             var haberler = from s in db.Haberler
+                            select s;
+             if (!String.IsNullOrEmpty(searchString))
+             {
+                 haberler = haberler.Where(s => s.Baslik.Contains(searchString));
+             }
+             int pageSize = 3;
+             int pageNumber = (page ?? 1);
+             return View(haberler.ToPagedList(pageNumber, pageSize));
+             //var haberler = db.Haberler.Include(h => h.Admin);
+             //return View(haberler.ToList());
+         }*/
 
         // GET: Haber/Details/5
         public ActionResult Details(int? id)
