@@ -31,7 +31,6 @@ namespace WebProje.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "UyeID,Ad,Soyad,KulAdi,EPosta,Sifre,UyelikTarihi")] Uye uye)
         {
-            foreach
             if (ModelState.IsValid)
             {
                 db.Uyeler.Add(uye);
