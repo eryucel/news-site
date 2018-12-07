@@ -144,6 +144,7 @@ namespace WebProje.Controllers
         {
             if (ModelState.IsValid)
             {
+                haber.HaberTarihi = DateTime.Now;
                 db.Haberler.Add(haber);
                 db.SaveChanges();
                 return RedirectToAction("Index");
