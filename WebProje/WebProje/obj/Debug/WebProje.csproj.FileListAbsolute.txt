@@ -46,3 +46,7 @@ C:\Users\HakanEryucel\Documents\web_programlama_proje\WebProje\WebProje\bin\Page
 C:\Users\HakanEryucel\Documents\web_programlama_proje\WebProje\WebProje\bin\PagedList.Mvc.dll
 C:\Users\HakanEryucel\Documents\web_programlama_proje\WebProje\WebProje\bin\PagedList.xml
 C:\Users\HakanEryucel\Documents\web_programlama_proje\WebProje\WebProje\bin\PagedList.Mvc.xml
+C:\Users\MELIH\Documents\web_programlama_proje\WebProje\WebProje\bin\PagedList.dll
+C:\Users\MELIH\Documents\web_programlama_proje\WebProje\WebProje\bin\PagedList.Mvc.dll
+C:\Users\MELIH\Documents\web_programlama_proje\WebProje\WebProje\bin\PagedList.xml
+C:\Users\MELIH\Documents\web_programlama_proje\WebProje\WebProje\bin\PagedList.Mvc.xml

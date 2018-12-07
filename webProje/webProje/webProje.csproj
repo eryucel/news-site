@@ -226,6 +226,7 @@
     <Compile Include="Controllers\HaberController.cs" />
     <Compile Include="Controllers\HaberYonlendirController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\KayitOlController.cs" />
     <Compile Include="DAL\DenemeData.cs" />
     <Compile Include="DAL\VeriContext.cs" />
     <Compile Include="Global.asax.cs">
@@ -250,6 +251,7 @@
     <Content Include="Views\Haber\Edit.cshtml" />
     <Content Include="Views\Haber\Index.cshtml" />
     <Content Include="Views\HaberYonlendir\Index.cshtml" />
+    <Content Include="Views\KayitOl\Create.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

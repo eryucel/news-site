@@ -17,21 +17,21 @@
                 <!-- Slide One - Set the background image for this slide in the line below -->
                 <div class="carousel-item" style="background-image: url('@Model.Haber.ElementAt(Model.Haber.Count-1).Foto')">
                     <div class="carousel-caption d-none d-md-block">
-                        <h3>@Model.Haber.ElementAt(Model.Haber.Count() - 1).Baslik</h3>
+                        <h3>@Html.ActionLink(@Model.Haber.ElementAt(Model.Haber.Count() - 1).Baslik,"Index","HaberYonlendir", @Model.Haber.ElementAt(Model.Haber.Count() - 1),new { })</h3>
 
                     </div>
                 </div>
                 <!-- Slide Two - Set the background image for this slide in the line below -->
                 <div class="carousel-item active" style="background-image: url('@Model.Haber.ElementAt(Model.Haber.Count-2).Foto')">
                     <div class="carousel-caption d-none d-md-block">
-                        <h3>@Model.Haber.ElementAt(Model.Haber.Count() - 2).Baslik</h3>
+                        <h3>@Html.ActionLink(@Model.Haber.ElementAt(Model.Haber.Count() - 2).Baslik, "Index", "HaberYonlendir", @Model.Haber.ElementAt(Model.Haber.Count() - 2), new { })</h3>
 
                     </div>
                 </div>
                 <!-- Slide Three - Set the background image for this slide in the line below -->
                 <div class="carousel-item" style="background-image: url('@Model.Haber.ElementAt(Model.Haber.Count() - 3).Foto')">
                     <div class="carousel-caption d-none d-md-block">
-                        <h3>@Model.Haber.ElementAt(Model.Haber.Count() - 3).Baslik</h3>
+                        <h3>@Html.ActionLink(@Model.Haber.ElementAt(Model.Haber.Count() - 3).Baslik, "Index", "HaberYonlendir", @Model.Haber.ElementAt(Model.Haber.Count() - 3), new { })</h3>
                     </div>
                 </div>
             </div>

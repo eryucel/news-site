@@ -9,6 +9,7 @@ namespace WebProje.Models
     {
         Futbol,Basketbol,Voleybol,Diger
     }
+    public enum Takim { Fenerbahce,Galatasaray,Besiktas,Trabzonspor,MilliTakim,Diger }
     public class Haber
     {
         public int HaberID { get; set; }
@@ -16,6 +17,7 @@ namespace WebProje.Models
         public string Icerik { get; set; }
         public string Foto { get; set; }
         public Kategoriler? Kategori { get; set; }
+        public Takim? Takim { get; set; }
         public DateTime? HaberTarihi { get; set; }
         public bool? Onay { get; set; }
         public string Baslik{ get; set; }
