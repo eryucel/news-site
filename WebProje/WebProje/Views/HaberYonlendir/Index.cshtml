@@ -3,6 +3,10 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+@{ 
+    Model.OkunmaSayisi += 1;
+}
+
 <link href="~/Content/HaberKonum.css" rel="stylesheet"/>
 <div class="haberFoto">
     <img src="@Model.Foto" width="400" height="300"/>
