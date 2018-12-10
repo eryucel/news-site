@@ -9,7 +9,7 @@ namespace WebProje.Models
     {
         Futbol,Basketbol,Voleybol,Diger
     }
-    public enum Takim { Fenerbahce,Galatasaray,Besiktas,Trabzonspor,MilliTakim,Diger }
+    public enum Takim { Fenerbahce,Galatasaray,Besiktas,Trabzonspor,Efes,MilliTakim,Diger }
     public class Haber
     {
         public int HaberID { get; set; }

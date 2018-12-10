@@ -104,6 +104,7 @@
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\HaberKonum.css" />
     <Content Include="Content\modern-business.css" />
     <Content Include="Content\PagedList.css" />
     <Content Include="Content\sb-admin-2.css" />
@@ -227,6 +228,7 @@
     <Compile Include="Controllers\HaberYonlendirController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KayitOlController.cs" />
+    <Compile Include="Controllers\TakimBransController.cs" />
     <Compile Include="DAL\DenemeData.cs" />
     <Compile Include="DAL\VeriContext.cs" />
     <Compile Include="Global.asax.cs">
@@ -252,6 +254,7 @@
     <Content Include="Views\Haber\Index.cshtml" />
     <Content Include="Views\HaberYonlendir\Index.cshtml" />
     <Content Include="Views\KayitOl\Create.cshtml" />
+    <Content Include="Views\TakimBrans\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

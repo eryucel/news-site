@@ -1,0 +1,25 @@
+﻿@using PagedList
+@using PagedList.Mvc
+@using WebProje.Models
+@model IPagedList<Haber>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card" style="width: 18rem;">
+    @foreach (var Haber in Model)
+    {
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src=@Haber.Foto alt=@Haber.Baslik>
+            <div class="card-body">
+                <h5 class="card-title">@Haber.Baslik</h5>
+
+                <a href="#" class="btn btn-primary">OKU</a>
+            </div>
+        </div>
+
+    }
+    
+    @Html.PagedListPager(Model, _sayfaNo => Url.Action("Index", "TakimBrans", new { SayfaNo = _sayfaNo,takim=Model.ElementAt(0).Takim,brans=Model.ElementAt(0).Kategori }))
+</div>

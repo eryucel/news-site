@@ -1,11 +1,11 @@
 ﻿@model WebProje.Models.Haber
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = @Model.Baslik;
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 
-<link href="~/Content/HaberKonum.css" rel="stylesheet"/>
+
 <div class="haberFoto">
     <img src="@Model.Foto" width="400" height="300"/>
 </div>
@@ -13,4 +13,4 @@
 <div>
     <p>@Model.Icerik</p>
 </div>
-
+<br />
