@@ -13,6 +13,8 @@ namespace WebProje.Models
         public string KulAdi { get; set; }
         public string EPosta { get; set; }
         public string Sifre { get; set; }
+        public bool SifremiHatirla { get; set; }
+        public bool GirisYapildiMi { get; set; }
         public DateTime UyelikTarihi { get; set; }
         public virtual ICollection<Yorum> Yorumlar { get; set; }
     }

@@ -224,6 +224,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\GirisYapController.cs" />
     <Compile Include="Controllers\HaberController.cs" />
     <Compile Include="Controllers\HaberYonlendirController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -255,6 +256,7 @@
     <Content Include="Views\HaberYonlendir\Index.cshtml" />
     <Content Include="Views\KayitOl\Create.cshtml" />
     <Content Include="Views\TakimBrans\Index.cshtml" />
+    <Content Include="Views\GirisYap\UyeGiris.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

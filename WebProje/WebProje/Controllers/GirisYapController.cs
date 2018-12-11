@@ -11,12 +11,12 @@ namespace WebProje.Controllers
     {
         // GET: GirisYap
         [HttpGet]
-        public ActionResult Index()
+        public ActionResult UyeGiris()
         {
             return View();
         }
         [HttpPost]
-        public ActionResult Index(Uye model)
+        public ActionResult UyeGiris(Uye model)
         {
             return View();
         }
