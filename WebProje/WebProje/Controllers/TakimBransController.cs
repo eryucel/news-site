@@ -19,7 +19,7 @@ namespace WebProje.Controllers
             int _sayfaNo = SayfaNo ?? 1;
             
             
-                var haberler = db.Haberler.OrderByDescending(x => x.HaberID).Where(x => (x.Takim == takim && x.Kategori == brans)).ToPagedList<Haber>(_sayfaNo,3);
+                var haberler = db.Haberler.OrderByDescending(x => x.HaberID).Where(x => (x.Takim == takim && x.Kategori == brans)).ToPagedList<Haber>(_sayfaNo,9);
                 return View(haberler);
             
             
