@@ -14,8 +14,8 @@
             <img class="card-img-top" src=@Haber.Foto alt=@Haber.Baslik>
             <div class="card-body">
                 <h5 class="card-title">@Haber.Baslik</h5>
-
-                <a href="#" class="btn btn-primary">OKU</a>
+                @Html.ActionLink("OKU","Index","HaberYonlendir",Haber,new { @class="btn btn-primary"})
+                
             </div>
         </div>
 

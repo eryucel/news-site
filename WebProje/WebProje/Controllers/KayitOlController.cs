@@ -31,11 +31,28 @@ namespace WebProje.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "UyeID,Ad,Soyad,KulAdi,EPosta,Sifre,UyelikTarihi")] Uye uye)
         {
-            if (ModelState.IsValid)
+            bool epostaVarMi=true,kulAdiVarMi=true;
+            var kontrol = db.Uyeler.ToList();
+            foreach (var knt in kontrol)
             {
+                if (knt.EPosta==uye.EPosta)
+                {
+                    epostaVarMi = false;
+                }
+            }
+            foreach (var knt in kontrol)
+            {
+                if (knt.KulAdi == uye.KulAdi)
+                {
+                    kulAdiVarMi= false;
+                }
+            }
+            if (ModelState.IsValid&&epostaVarMi&&kulAdiVarMi)
+            {
+                uye.UyelikTarihi = DateTime.Now;
                 db.Uyeler.Add(uye);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "Home");
             }
 
             return RedirectToAction("Index","Home");
