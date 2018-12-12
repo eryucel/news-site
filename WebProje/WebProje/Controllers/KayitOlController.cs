@@ -19,6 +19,7 @@ namespace WebProje.Controllers
         
 
         // GET: KayitOl/Create
+        [HttpGet]
         public ActionResult Create()
         {
             return View();
@@ -39,6 +40,8 @@ namespace WebProje.Controllers
                 {
                     epostaVarMi = false;
                 }
+                
+                
             }
             foreach (var knt in kontrol)
             {
@@ -46,6 +49,13 @@ namespace WebProje.Controllers
                 {
                     kulAdiVarMi= false;
                 }
+                
+                
+            }
+            if (uye.KulAdi==""||uye.EPosta=="" || uye.Sifre == "" || uye.Ad == "" || uye.Soyad == "")
+            {
+                epostaVarMi = false;
+                kulAdiVarMi = false;
             }
             if (ModelState.IsValid&&epostaVarMi&&kulAdiVarMi)
             {
@@ -54,8 +64,11 @@ namespace WebProje.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index", "Home");
             }
+            else {
+                return RedirectToAction("KayitOl","Hatalar");
+            }
 
-            return RedirectToAction("Index","Home");
+            
         }
 
 
