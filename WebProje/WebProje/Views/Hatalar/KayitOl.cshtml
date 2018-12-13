@@ -4,8 +4,10 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <br /><br /><br />
-<div class="alert alert-danger">
-    <strong>HATA!</strong> Girdiğiniz E- Posta veya Kullanıcı Adı Sistemde Kayıtlı.
-</div>
-<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+            <div class="alert alert-danger">
+                <strong>HATA!</strong> Girdiğiniz E- Posta veya Kullanıcı Adı Sistemde Kayıtlı.
+                <br /><br />
+                    @Html.ActionLink("Geri Dön", "Create", "KayitOl", null, new { @Class = "btn btn-primary" })
+            </div>
+                <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
 
