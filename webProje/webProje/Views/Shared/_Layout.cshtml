@@ -67,8 +67,18 @@
 
                         @Html.ActionLink("Kayıt Ol", "Create", "KayitOl", null, new { @Class = "nav-link" })
                     </li>
-                    <li class="nav-item">
-                        @Html.ActionLink("Giriş Yap", "UyeGiris", "GirisYap", null, new { @Class = "nav-link" })
+                    @*<li class="nav-item">
+            @Html.ActionLink("Giriş Yap", "UyeGiris", "GirisYap", null, new { @Class = "nav-link" })
+        </li>*@
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Giriş
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
+                            @Html.ActionLink("Üye Girişi", "UyeGiris", "GirisYap", null, new { @Class = "nav-link" })
+                            @Html.ActionLink("Admin Girişi", "AdminGiris", "GirisYap", null, new { @Class = "nav-link" })
+
+                        </div>
                     </li>
 
                 </ul>

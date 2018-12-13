@@ -15,8 +15,20 @@ namespace WebProje.Controllers
         {
             return View();
         }
+        [ValidateAntiForgeryToken]
         [HttpPost]
         public ActionResult UyeGiris(Uye model)
+        {
+            return View();
+        }
+        [HttpGet]
+        public ActionResult AdminGiris()
+        {
+            return View();
+        }
+        [ValidateAntiForgeryToken]
+        [HttpPost]
+        public ActionResult AdminGiris(Admin model)
         {
             return View();
         }

@@ -1,18 +1,18 @@
-﻿@model WebProje.Models.Uye
+﻿@model WebProje.Models.Admin
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<br /><br /><br />
+<br /><br /><br /><br />
 <div class="container">
     <div class="row">
         <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
             <div class="card card-signin my-5">
                 <div class="card-body">
-                    <h5 class="card-title text-center">Giriş Yap</h5>
+                    <h5 class="card-title text-center">Admin Giriş Sayfası</h5>
                     @*<form class="form-signin">*@
-                    @using (Html.BeginForm("UyeGiris", "GirisYap", FormMethod.Post, new { @class = "form-signin" }))
+                    @using (Html.BeginForm("AdminGiris", "GirisYap", FormMethod.Post, new { @class = "form-signin" }))
                     {
                         @Html.AntiForgeryToken()
                         <div class="form-label-group">
@@ -24,14 +24,9 @@
                         <div class="form-label-group">
                             @Html.TextBoxFor(x => x.Sifre, new { @class = "form-control", @placeholder = "Şifre", @type = "password" })
                             @*<input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-                <label for="inputPassword">Password</label>*@
+                                <label for="inputPassword">Password</label>*@
                         </div>
-                        <br />
-                        <div class="custom-control custom-checkbox mb-3">
-                            @Html.CheckBoxFor(x => x.SifremiHatirla, new { @class = "custom-control-input" })
-                            @*<input type="checkbox" class="custom-control-input" id="customCheck1">*@
-                            <label class="custom-control-label" for="SifremiHatirla">Şifremi Hatırla</label>
-                        </div>
+                        <br />                     
                         <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Giriş Yap</button>
                         <hr class="my-4">
                     }
@@ -42,5 +37,5 @@
         </div>
     </div>
 </div>
-<br /><br /><br />
+<br /><br /><br /><br />
 

@@ -261,6 +261,7 @@
     <Content Include="Views\TakimBrans\Index.cshtml" />
     <Content Include="Views\GirisYap\UyeGiris.cshtml" />
     <Content Include="Views\Hatalar\KayitOl.cshtml" />
+    <Content Include="Views\GirisYap\AdminGiris.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
