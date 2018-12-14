@@ -52,7 +52,7 @@ namespace WebProje.Controllers
                 
                 
             }
-            if (uye.KulAdi==""||uye.EPosta=="" || uye.Sifre == "" || uye.Ad == "" || uye.Soyad == "")
+            if (uye.KulAdi==null||uye.EPosta== null || uye.Sifre == null || uye.Ad == null || uye.Soyad == null)
             {
                 epostaVarMi = false;
                 kulAdiVarMi = false;
