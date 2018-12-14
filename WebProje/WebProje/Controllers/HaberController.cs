@@ -170,43 +170,8 @@ namespace WebProje.Controllers
             ViewBag.AdminID = new SelectList(db.Adminler, "AdminID", "Ad", haber.AdminID);
             return View(haber);
         }
-
-        // POST: Haber/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "HaberID,AdminID,Icerik,Foto,Kategori,HaberTarihi,Onay,Baslik,OkunmaSayisi")] Haber haber)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Entry(haber).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            ViewBag.AdminID = new SelectList(db.Adminler, "AdminID", "Ad", haber.AdminID);
-            return View(haber);
-        }
-
-        // GET: Haber/Delete/5
+        
         public ActionResult Delete(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Haber haber = db.Haberler.Find(id);
-            if (haber == null)
-            {
-                return HttpNotFound();
-            }
-            return View(haber);
-        }
-
-        // POST: Haber/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
         {
             Haber haber = db.Haberler.Find(id);
             db.Haberler.Remove(haber);

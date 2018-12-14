@@ -252,8 +252,6 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
     <Content Include="Views\Shared\_AdminLayout.cshtml" />
     <Content Include="Views\Haber\Create.cshtml" />
-    <Content Include="Views\Haber\Delete.cshtml" />
-    <Content Include="Views\Haber\Details.cshtml" />
     <Content Include="Views\Haber\Edit.cshtml" />
     <Content Include="Views\Haber\Index.cshtml" />
     <Content Include="Views\HaberYonlendir\Index.cshtml" />

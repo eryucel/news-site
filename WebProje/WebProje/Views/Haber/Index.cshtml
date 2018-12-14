@@ -82,8 +82,8 @@
                 </td>
                 <td>
                     @Html.ActionLink("Düzenle", "Edit", new { id = item.HaberID }) |
-                    @Html.ActionLink("Detaylar", "Details", new { id = item.HaberID }) |
-                    @Html.ActionLink("Sil", "Delete", new { id = item.HaberID })
+                    @Html.ActionLink("Haberi Gör", "Index", "HaberYonlendir", item, new { }) |
+                    @Html.ActionLink("Sil", "Delete", new { id = item.HaberID }, new { onclick ="return confirm('Bu haberi silmek istediğinize emin misiniz ?');"})
                 </td>
             </tr>
         }
