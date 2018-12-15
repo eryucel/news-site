@@ -54,36 +54,36 @@
 
         <!-- Marketing Icons Section -->
         <div class="row">
-            <div class="col-lg-4 mb-4">
+            <div class="col-lg-4 col-sm-6 portfolio-item">
                 <div class="card h-100">
-                    <h4 class="card-header">Card Title</h4>
+                    <a href="@Url.Action("Index", "HaberYonlendir", @Model.Haber.OrderBy(x=>x.OkunmaSayisi).ElementAt(Model.Haber.Count-1))"><img class="card-img-top" src="@Model.Haber.OrderBy(x=>x.OkunmaSayisi).ElementAt(Model.Haber.Count-1).Foto" alt=""></a>
                     <div class="card-body">
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
-                    </div>
-                    <div class="card-footer">
-                        <a href="#" class="btn btn-primary">OKU</a>
+                        <h4 class="card-title">
+                            <a href="#">@Html.ActionLink(@Model.Haber.OrderBy(x => x.OkunmaSayisi).ElementAt(Model.Haber.Count - 1).Baslik, "Index", "HaberYonlendir", @Model.Haber.OrderBy(x => x.OkunmaSayisi).ElementAt(Model.Haber.Count - 1), new { })</a>
+                        </h4>
+
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 mb-4">
+            <div class="col-lg-4 col-sm-6 portfolio-item">
                 <div class="card h-100">
-                    <h4 class="card-header">Card Title</h4>
+                    <a href="@Url.Action("Index", "HaberYonlendir", @Model.Haber.OrderBy(x=>x.OkunmaSayisi).ElementAt(Model.Haber.Count-2))"><img class="card-img-top" src="@Model.Haber.OrderBy(x=>x.OkunmaSayisi).ElementAt(Model.Haber.Count-2).Foto" alt=""></a>
                     <div class="card-body">
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis ipsam eos, nam perspiciatis natus commodi similique totam consectetur praesentium molestiae atque exercitationem ut consequuntur, sed eveniet, magni nostrum sint fuga.</p>
-                    </div>
-                    <div class="card-footer">
-                        <a href="#" class="btn btn-primary">OKU</a>
+                        <h4 class="card-title">
+                            <a href="#">@Html.ActionLink(@Model.Haber.OrderBy(x => x.OkunmaSayisi).ElementAt(Model.Haber.Count - 2).Baslik, "Index", "HaberYonlendir", @Model.Haber.OrderBy(x => x.OkunmaSayisi).ElementAt(Model.Haber.Count - 2), new { })</a>
+                        </h4>
+
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 mb-4">
+            <div class="col-lg-4 col-sm-6 portfolio-item">
                 <div class="card h-100">
-                    <h4 class="card-header">Card Title</h4>
+                    <a href="@Url.Action("Index", "HaberYonlendir", @Model.Haber.OrderBy(x=>x.OkunmaSayisi).ElementAt(Model.Haber.Count-3))"><img class="card-img-top" src="@Model.Haber.OrderBy(x=>x.OkunmaSayisi).ElementAt(Model.Haber.Count-3).Foto" alt=""></a>
                     <div class="card-body">
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
-                    </div>
-                    <div class="card-footer">
-                        <a href="#" class="btn btn-primary">OKU</a>
+                        <h4 class="card-title">
+                            <a href="#">@Html.ActionLink(@Model.Haber.OrderBy(x => x.OkunmaSayisi).ElementAt(Model.Haber.Count - 3).Baslik, "Index", "HaberYonlendir", @Model.Haber.OrderBy(x => x.OkunmaSayisi).ElementAt(Model.Haber.Count - 3), new { })</a>
+                        </h4>
+
                     </div>
                 </div>
             </div>
