@@ -243,6 +243,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KayitOlController.cs" />
     <Compile Include="Controllers\TakimBransController.cs" />
+    <Compile Include="Controllers\UyeController.cs" />
     <Compile Include="DAL\DenemeData.cs" />
     <Compile Include="DAL\VeriContext.cs" />
     <Compile Include="Global.asax.cs">
@@ -250,6 +251,7 @@
     </Compile>
     <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\Haber.cs" />
+    <Compile Include="Models\ViewModels\AdminViewModel.cs" />
     <Compile Include="Models\ViewModels\HomeIndexViewModel.cs" />
     <Compile Include="Models\Uye.cs" />
     <Compile Include="Models\Yorum.cs" />
@@ -271,6 +273,11 @@
     <Content Include="Views\Hatalar\KayitOl.cshtml" />
     <Content Include="Views\GirisYap\AdminGiris.cshtml" />
     <Content Include="Views\Admin\AdminIndex.cshtml" />
+    <Content Include="Views\Uye\Create.cshtml" />
+    <Content Include="Views\Uye\Delete.cshtml" />
+    <Content Include="Views\Uye\Details.cshtml" />
+    <Content Include="Views\Uye\Edit.cshtml" />
+    <Content Include="Views\Uye\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

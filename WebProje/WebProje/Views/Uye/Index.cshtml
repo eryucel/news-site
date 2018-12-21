@@ -1,0 +1,76 @@
+﻿@model IEnumerable<WebProje.Models.Uye>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Ad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Soyad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.KulAdi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EPosta)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sifre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SifremiHatirla)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GirisYapildiMi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UyelikTarihi)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Soyad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.KulAdi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EPosta)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sifre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SifremiHatirla)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GirisYapildiMi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UyelikTarihi)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.UyeID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.UyeID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.UyeID })
+        </td>
+    </tr>
+}
+
+</table>
