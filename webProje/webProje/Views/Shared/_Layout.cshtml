@@ -63,23 +63,42 @@
                             <a class="dropdown-item" href="404.html">Gmail</a>
                         </div>
                     </li>
-                    <li class="nav-item">
+                    @{
+                        if (HttpContext.Current.User.Identity.IsAuthenticated)
+                        {
 
-                        @Html.ActionLink("Kayıt Ol", "Create", "KayitOl", null, new { @Class = "nav-link" })
-                    </li>
-                    @*<li class="nav-item">
-            @Html.ActionLink("Giriş Yap", "UyeGiris", "GirisYap", null, new { @Class = "nav-link" })
-        </li>*@
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Giriş
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
-                            @Html.ActionLink("Üye Girişi", "UyeGiris", "GirisYap", null, new { @Class = "dropdown-item" })
-                            @Html.ActionLink("Admin Girişi", "AdminGiris", "GirisYap", null, new { @Class = "dropdown-item" })
+                            <li class="nav-item">
 
-                        </div>
-                    </li>
+                                @Html.ActionLink("Çıkış Yap", "Cikis", "GirisYap", null, new { @Class = "nav-link" })
+                            </li>
+                            <li class="nav-item">
+
+                                @Html.Label("Giriş Yapılan Kullanıcı: "+HttpContext.Current.User.Identity.Name, new { @Class = "nav-link" })
+                            </li>
+
+                        }
+                        else
+                        {
+                            <li class="nav-item">
+
+                                @Html.ActionLink("Kayıt Ol", "Create", "KayitOl", null, new { @Class = "nav-link" })
+                            </li>
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Giriş
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
+                                    @Html.ActionLink("Üye Girişi", "UyeGiris", "GirisYap", null, new { @Class = "dropdown-item" })
+                                    @Html.ActionLink("Admin Girişi", "AdminGiris", "GirisYap", null, new { @Class = "dropdown-item" })
+
+                                </div>
+                            </li>
+                        }
+                    }
+
+
+
 
                 </ul>
             </div>
