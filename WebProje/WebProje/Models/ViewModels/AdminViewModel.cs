@@ -11,5 +11,6 @@ namespace WebProje.Models.ViewModels
         public List<Uye> Uye { get; set; }
         public List<Admin> Admin { get; set; }
         public List<Yorum> Yorum { get; set; }
+
     }
 }

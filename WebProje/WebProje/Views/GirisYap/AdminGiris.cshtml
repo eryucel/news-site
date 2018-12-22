@@ -11,10 +11,11 @@
             <div class="card card-signin my-5">
                 <div class="card-body">
                     <h5 class="card-title text-center">Admin Giriş Sayfası</h5>
+                    @ViewBag.Mesaj
                     @*<form class="form-signin">*@
                     @using (Html.BeginForm("AdminGiris", "GirisYap", FormMethod.Post, new { @class = "form-signin" }))
                     {
-                        @Html.AntiForgeryToken()
+                        
                         <div class="form-label-group">
                             @Html.TextBoxFor(x => x.EPosta, new { @class = "form-control", @placeholder = "Email Adresi" })
                             @*<input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>*@

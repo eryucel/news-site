@@ -1,76 +1,82 @@
-﻿@model IEnumerable<WebProje.Models.Uye>
+﻿@using PagedList
+@using PagedList.Mvc
+@using WebProje.Models
+@model IPagedList<Uye>
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
 
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Üyeler Listesi</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Yeni Üye", "Create",null, new { @class = "btn btn-primary btn-large" })
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Ad)
+            @Html.DisplayNameFor(model => model.ElementAt(0).Ad)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Soyad)
+            @Html.DisplayNameFor(model => model.ElementAt(0).Soyad)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.KulAdi)
+            @Html.DisplayNameFor(model => model.ElementAt(0).KulAdi)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.EPosta)
+            @Html.DisplayNameFor(model => model.ElementAt(0).EPosta)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Sifre)
+            @Html.DisplayNameFor(model => model.ElementAt(0).Sifre)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.SifremiHatirla)
+            @Html.DisplayNameFor(model => model.ElementAt(0).SifremiHatirla)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.GirisYapildiMi)
+            @Html.DisplayNameFor(model => model.ElementAt(0).GirisYapildiMi)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.UyelikTarihi)
+            @Html.DisplayNameFor(model => model.ElementAt(0).UyelikTarihi)
         </th>
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Ad)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Soyad)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.KulAdi)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.EPosta)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Sifre)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SifremiHatirla)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.GirisYapildiMi)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.UyelikTarihi)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.UyeID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.UyeID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.UyeID })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Soyad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KulAdi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EPosta)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sifre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SifremiHatirla)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GirisYapildiMi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UyelikTarihi)
+            </td>
+            <td>
+                @Html.ActionLink("Düzenle", "Edit", new { id = item.UyeID }, new { @class = "btn btn-primary btn-large" }) |
+                @Html.ActionLink("Detaylar", "Details", new { id = item.UyeID }, new { @class = "btn btn-primary btn-large" }) |
+                @Html.ActionLink("Sil", "Delete", new { id = item.UyeID }, new { @class = "btn btn-primary btn-large" })
+            </td>
+        </tr>
+    }
 
 </table>
+@Html.PagedListPager(Model, _sayfaNo => Url.Action("Index", "Uye", new { SayfaNo = _sayfaNo }))

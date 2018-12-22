@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using WebProje.DAL;
+using WebProje.Models;
 using WebProje.Models.ViewModels;
 
 namespace WebProje.Controllers
@@ -12,6 +13,7 @@ namespace WebProje.Controllers
     {
         VeriContext db = new VeriContext();
         // GET: Admin
+        [Authorize]
         public ActionResult AdminIndex()
         {
             var model = new AdminViewModel()
@@ -19,8 +21,9 @@ namespace WebProje.Controllers
                 Haber = db.Haberler.ToList(),
                 Uye = db.Uyeler.ToList(),
                 Admin = db.Adminler.ToList(),
-                Yorum = db.Yorumlar.ToList()
+                Yorum = db.Yorumlar.ToList()   
             };
+           
             return View(model);
         }
     }

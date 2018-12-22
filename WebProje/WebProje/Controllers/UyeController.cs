@@ -8,17 +8,23 @@ using System.Web;
 using System.Web.Mvc;
 using WebProje.DAL;
 using WebProje.Models;
+using PagedList;
+using PagedList.Mvc;
 
 namespace WebProje.Controllers
 {
+    [Authorize]
     public class UyeController : Controller
     {
+
         private VeriContext db = new VeriContext();
 
         // GET: Uye
-        public ActionResult Index()
+        public ActionResult Index(int? SayfaNo)
         {
-            return View(db.Uyeler.ToList());
+            int _sayfaNo = SayfaNo ?? 1;
+            var uyeler = db.Uyeler.OrderByDescending(x => x.UyeID).ToPagedList<Uye>(_sayfaNo, 10);
+            return View(uyeler);
         }
 
         // GET: Uye/Details/5

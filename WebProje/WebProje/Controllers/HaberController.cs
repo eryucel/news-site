@@ -12,11 +12,13 @@ using PagedList;
 
 namespace WebProje.Controllers
 {
+    [Authorize]
     public class HaberController : Controller
     {
         private VeriContext db = new VeriContext();
 
         // GET: Haber
+      
         public ViewResult Index(string sortOrder, string currentFilter, string searchString, int? page)
         {
             ViewBag.CurrentSort = sortOrder;
