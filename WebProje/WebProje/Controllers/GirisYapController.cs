@@ -23,7 +23,18 @@ namespace WebProje.Controllers
         [HttpPost]
         public ActionResult UyeGiris(Uye model)
         {
-            return View();
+            var kullanici = db.Uyeler.FirstOrDefault(x => x.EPosta == model.EPosta && x.Sifre == model.Sifre);
+            if (kullanici != null)
+            {
+                FormsAuthentication.SetAuthCookie(kullanici.KulAdi, false);
+                return RedirectToAction("Index", "Home");
+            }
+            else
+            {
+                ViewBag.Mesaj = "EPosta veya Şifre Hatalı";
+                return View();
+            }
+           
         }
         [HttpGet]
         public ActionResult AdminGiris()
