@@ -9,74 +9,76 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h2>Üyeler Listesi</h2>
+    <h2>Üyeler Listesi</h2>
 
-<p>
-    @Html.ActionLink("Yeni Üye", "Create",null, new { @class = "btn btn-primary btn-large" })
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.ElementAt(0).Ad)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ElementAt(0).Soyad)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ElementAt(0).KulAdi)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ElementAt(0).EPosta)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ElementAt(0).Sifre)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ElementAt(0).SifremiHatirla)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ElementAt(0).GirisYapildiMi)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ElementAt(0).UyelikTarihi)
-        </th>
-        <th></th>
-    </tr>
-
-    @foreach (var item in Model)
-    {
+    <p>
+        @Html.ActionLink("Yeni Üye", "Create", null, new { @class = "btn btn-primary btn-large" })
+    </p>
+    <table class="table">
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Ad)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Soyad)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.KulAdi)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.EPosta)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Sifre)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SifremiHatirla)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.GirisYapildiMi)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.UyelikTarihi)
-            </td>
-            <td>
-                @Html.ActionLink("Düzenle", "Edit", new { id = item.UyeID }, new { @class = "btn btn-primary btn-large" }) |
-                @Html.ActionLink("Detaylar", "Details", new { id = item.UyeID }, new { @class = "btn btn-primary btn-large" }) |
-                @Html.ActionLink("Sil", "Delete", new { id = item.UyeID }, new { @class = "btn btn-primary btn-large" })
-            </td>
+            <th>
+                @Html.ActionLink("Üye Adı", "Index", new { sortOrder = ViewBag.AdSortParm, currentFilter = ViewBag.CurrentFilter })
+            </th>
+            <th>
+                @Html.ActionLink("Soyadı", "Index", new { sortOrder = ViewBag.SoyadSortParm, currentFilter = ViewBag.CurrentFilter })
+            </th>
+            <th>
+                @Html.ActionLink("Kullanıcı Adı", "Index", new { sortOrder = ViewBag.KulAdiSortParm, currentFilter = ViewBag.CurrentFilter })
+            </th>
+            <th>
+                @Html.ActionLink("EPosta", "Index", new { sortOrder = ViewBag.EPostaSortParm, currentFilter = ViewBag.CurrentFilter })
+            </th>
+            <th>
+                @Html.ActionLink("Şifre", "Index", new { sortOrder = ViewBag.SifreSortParm, currentFilter = ViewBag.CurrentFilter })
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ElementAt(0).SifremiHatirla)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ElementAt(0).GirisYapildiMi)
+            </th>
+            <th>
+                @Html.ActionLink("Üyelik Tarihi", "Index", new { sortOrder = ViewBag.UyelikTarihiSortParm, currentFilter = ViewBag.CurrentFilter })
+            </th>
+            <th></th>
         </tr>
-    }
 
-</table>
-@Html.PagedListPager(Model, _sayfaNo => Url.Action("Index", "Uye", new { SayfaNo = _sayfaNo }))
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ad)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Soyad)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.KulAdi)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EPosta)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Sifre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SifremiHatirla)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GirisYapildiMi)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UyelikTarihi)
+                </td>
+                <td>
+                    @Html.ActionLink("Düzenle", "Edit", new { id = item.UyeID }, new { @class = "btn btn-primary btn-large" }) |
+                    @Html.ActionLink("Detaylar", "Details", new { id = item.UyeID }, new { @class = "btn btn-primary btn-large" }) |
+                    @Html.ActionLink("Sil", "Delete", new { id = item.UyeID }, new { @class = "btn btn-primary btn-large" })
+                </td>
+            </tr>
+        }
+
+    </table>
+
+    @Html.PagedListPager(Model, page => Url.Action("Index", "Uye", new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
+

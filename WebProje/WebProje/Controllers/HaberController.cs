@@ -81,11 +81,11 @@ namespace WebProje.Controllers
                     haberler = haberler.OrderByDescending(s => s.HaberTarihi);
                     break;
                 default:  // Name ascending 
-                    haberler = haberler.OrderBy(s => s.HaberTarihi);
+                    haberler = haberler.OrderBy(s => s.Baslik);
                     break;
             }
 
-            int pageSize = 5;
+            int pageSize = 10;
             int pageNumber = (page ?? 1);
             return View(haberler.ToPagedList(pageNumber, pageSize));
         }

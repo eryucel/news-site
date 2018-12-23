@@ -20,11 +20,78 @@ namespace WebProje.Controllers
         private VeriContext db = new VeriContext();
 
         // GET: Uye
-        public ActionResult Index(int? SayfaNo)
+        public ActionResult Index(string sortOrder, string currentFilter, string searchString, int? page/*int? SayfaNo*/)
         {
-            int _sayfaNo = SayfaNo ?? 1;
-            var uyeler = db.Uyeler.OrderByDescending(x => x.UyeID).ToPagedList<Uye>(_sayfaNo, 10);
-            return View(uyeler);
+            ViewBag.CurrentSort = sortOrder;
+            ViewBag.AdSortParm = String.IsNullOrEmpty(sortOrder) ? "AzalanAd" : "";
+            ViewBag.SoyadSortParm = sortOrder == "Soyad" ? "AzalanSoyad" : "Soyad";
+            ViewBag.KulAdiSortParm = sortOrder == "KulAdi" ? "AzalanKulAdi" : "KulAdi";
+            ViewBag.EPostaSortParm = sortOrder == "EPosta" ? "AzalanEPosta" : "EPosta";
+            ViewBag.SifreSortParm = sortOrder == "Sifre" ? "AzalanSifre" : "Sifre";
+            ViewBag.UyelikTarihiSortParm = sortOrder == "UyelikTarihi" ? "AzalanUyelikTarihi" : "UyelikTarihi";
+            if (searchString != null)
+            {
+                page = 1;
+            }
+            else
+            {
+                searchString = currentFilter;
+            }
+
+            ViewBag.CurrentFilter = searchString;
+
+            var uyeler = from s in db.Uyeler
+                           select s;
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                uyeler = uyeler.Where(s => s.Ad.Contains(searchString));
+            }
+            switch (sortOrder)
+            {
+                case "Soyad":
+                    uyeler = uyeler.OrderBy(s => s.Soyad);
+                    break;
+                case "AzalanSoyad":
+                    uyeler = uyeler.OrderByDescending(s => s.Soyad);
+                    break;
+                case "KulAdi":
+                    uyeler = uyeler.OrderBy(s => s.KulAdi);
+                    break;
+                case "AzalanKulAdi":
+                    uyeler = uyeler.OrderByDescending(s => s.KulAdi);
+                    break;
+                case "EPosta":
+                    uyeler = uyeler.OrderBy(s => s.EPosta);
+                    break;
+                case "AzalanEPosta":
+                    uyeler = uyeler.OrderByDescending(s => s.EPosta);
+                    break;
+                case "Sifre":
+                    uyeler = uyeler.OrderBy(s => s.Sifre);
+                    break;
+                case "AzalanSifre":
+                    uyeler = uyeler.OrderByDescending(s => s.Sifre);
+                    break;
+                case "AzalanAd":
+                    uyeler = uyeler.OrderByDescending(s => s.Ad);
+                    break;
+                case "UyelikTarihi":
+                    uyeler = uyeler.OrderBy(s => s.UyelikTarihi);
+                    break;
+                case "AzalanUyelikTarihi":
+                    uyeler = uyeler.OrderByDescending(s => s.UyelikTarihi);
+                    break;
+                default:  // Name ascending 
+                    uyeler = uyeler.OrderBy(s => s.Ad);
+                    break;
+            }
+
+            int pageSize = 10;
+            int pageNumber = (page ?? 1);
+            return View(uyeler.ToPagedList(pageNumber, pageSize));
+            /* int _sayfaNo = SayfaNo ?? 1;
+             var uyeler = db.Uyeler.OrderByDescending(x => x.UyeID).ToPagedList<Uye>(_sayfaNo, 10);
+             return View(uyeler);*/
         }
 
         // GET: Uye/Details/5
