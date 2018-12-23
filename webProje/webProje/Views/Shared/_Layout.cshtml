@@ -30,17 +30,19 @@
 
                         @Html.ActionLink(@WebProje.Resources.Kaynak.Dil, "Index", "Language", null, new { @Class = "nav-link" })
                     </li>
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        @WebProje.Resources.Kaynak.Futbol
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
-                        @Html.ActionLink("Fenerbahçe", "Index", "TakimBrans", new { takim = WebProje.Models.Takim.Fenerbahce, brans = WebProje.Models.Kategoriler.Futbol }, new { @class = "dropdown-item" })
-                        @Html.ActionLink("Galatasaray", "Index", "TakimBrans", new { takim = WebProje.Models.Takim.Galatasaray, brans = WebProje.Models.Kategoriler.Futbol }, new { @class = "dropdown-item" })
-                        @Html.ActionLink("Beşiktaş", "Index", "TakimBrans", new { takim = WebProje.Models.Takim.Besiktas, brans = WebProje.Models.Kategoriler.Futbol }, new { @class = "dropdown-item" })
-                        @Html.ActionLink("Trabzonspor", "Index", "TakimBrans", new { takim = WebProje.Models.Takim.Trabzonspor, brans = WebProje.Models.Kategoriler.Futbol }, new { @class = "dropdown-item" })
-                        @Html.ActionLink(@WebProje.Resources.Kaynak.MilliTakim, "Index", "TakimBrans", new { takim = WebProje.Models.Takim.MilliTakim, brans = WebProje.Models.Kategoriler.Futbol }, new { @class = "dropdown-item" })
-                    </div>
-                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            @WebProje.Resources.Kaynak.Futbol
+                        </a>
+
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
+                            @Html.ActionLink("Fenerbahçe", "Index", "TakimBrans", new { takim = WebProje.Models.Takim.Fenerbahce, brans = WebProje.Models.Kategoriler.Futbol }, new { @class = "dropdown-item" })
+                            @Html.ActionLink("Galatasaray", "Index", "TakimBrans", new { takim = WebProje.Models.Takim.Galatasaray, brans = WebProje.Models.Kategoriler.Futbol }, new { @class = "dropdown-item" })
+                            @Html.ActionLink("Beşiktaş", "Index", "TakimBrans", new { takim = WebProje.Models.Takim.Besiktas, brans = WebProje.Models.Kategoriler.Futbol }, new { @class = "dropdown-item" })
+                            @Html.ActionLink("Trabzonspor", "Index", "TakimBrans", new { takim = WebProje.Models.Takim.Trabzonspor, brans = WebProje.Models.Kategoriler.Futbol }, new { @class = "dropdown-item" })
+                            @Html.ActionLink(@WebProje.Resources.Kaynak.MilliTakim, "Index", "TakimBrans", new { takim = WebProje.Models.Takim.MilliTakim, brans = WebProje.Models.Kategoriler.Futbol }, new { @class = "dropdown-item" })
+                        </div>
+                    </liclass="nav-item>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             @WebProje.Resources.Kaynak.Basketbol

@@ -9,7 +9,7 @@ namespace WebProje.Models
     {
         public int YorumID { get; set; }
         public int UyeID { get; set; }
-        public int HaberId { get; set; }
+        public int HaberID { get; set; }
         public string Icerik { get; set; }
         public DateTime YorumTarihi { get; set; }
         public bool? Onay { get; set; }

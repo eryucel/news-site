@@ -16,7 +16,7 @@ namespace WebProje.Controllers
         {
             db.Haberler.Find(haber.HaberID).OkunmaSayisi += 1;
             db.SaveChanges();
-            return View(haber);
+            return View(db.Haberler.Find(haber.HaberID));
         }
     }
 }
