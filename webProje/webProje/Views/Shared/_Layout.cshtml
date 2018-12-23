@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>_Layout</title>
+    <title>Haber Sitesi</title>
 
     <link href="~/Content/bootstrap.min.css" rel="stylesheet">
     <link href="~/Content/modern-business.css" rel="stylesheet">
@@ -26,35 +26,39 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Futbol
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
-                            @Html.ActionLink("Fenerbahçe", "Index", "TakimBrans", new { takim = WebProje.Models.Takim.Fenerbahce, brans = WebProje.Models.Kategoriler.Futbol }, new { @class = "dropdown-item" })
-                            @Html.ActionLink("Galatasaray", "Index", "TakimBrans", new { takim = WebProje.Models.Takim.Galatasaray, brans = WebProje.Models.Kategoriler.Futbol }, new { @class = "dropdown-item" })
-                            @Html.ActionLink("Beşiktaş", "Index", "TakimBrans", new { takim = WebProje.Models.Takim.Besiktas, brans = WebProje.Models.Kategoriler.Futbol }, new { @class = "dropdown-item" })
-                            @Html.ActionLink("Trabzonspor", "Index", "TakimBrans", new { takim = WebProje.Models.Takim.Trabzonspor, brans = WebProje.Models.Kategoriler.Futbol }, new { @class = "dropdown-item" })
-                            @Html.ActionLink("Milli Takım", "Index", "TakimBrans", new { takim = WebProje.Models.Takim.MilliTakim, brans = WebProje.Models.Kategoriler.Futbol }, new { @class = "dropdown-item" })
-                        </div>
+                    <li class="nav-item">
+
+                        @Html.ActionLink(@WebProje.Resources.Kaynak.Dil, "Index", "Language", null, new { @Class = "nav-link" })
+                    </li>
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        @WebProje.Resources.Kaynak.Futbol
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
+                        @Html.ActionLink("Fenerbahçe", "Index", "TakimBrans", new { takim = WebProje.Models.Takim.Fenerbahce, brans = WebProje.Models.Kategoriler.Futbol }, new { @class = "dropdown-item" })
+                        @Html.ActionLink("Galatasaray", "Index", "TakimBrans", new { takim = WebProje.Models.Takim.Galatasaray, brans = WebProje.Models.Kategoriler.Futbol }, new { @class = "dropdown-item" })
+                        @Html.ActionLink("Beşiktaş", "Index", "TakimBrans", new { takim = WebProje.Models.Takim.Besiktas, brans = WebProje.Models.Kategoriler.Futbol }, new { @class = "dropdown-item" })
+                        @Html.ActionLink("Trabzonspor", "Index", "TakimBrans", new { takim = WebProje.Models.Takim.Trabzonspor, brans = WebProje.Models.Kategoriler.Futbol }, new { @class = "dropdown-item" })
+                        @Html.ActionLink(@WebProje.Resources.Kaynak.MilliTakim, "Index", "TakimBrans", new { takim = WebProje.Models.Takim.MilliTakim, brans = WebProje.Models.Kategoriler.Futbol }, new { @class = "dropdown-item" })
+                    </div>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Basketbol
+                            @WebProje.Resources.Kaynak.Basketbol
                         </a>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
                             @Html.ActionLink("Fenerbahçe", "Index", "TakimBrans", new { takim = WebProje.Models.Takim.Fenerbahce, brans = WebProje.Models.Kategoriler.Basketbol }, new { @class = "dropdown-item" })
                             @Html.ActionLink("Anadolu Efes", "Index", "TakimBrans", new { takim = WebProje.Models.Takim.Efes, brans = WebProje.Models.Kategoriler.Basketbol }, new { @class = "dropdown-item" })
-                            @Html.ActionLink("Milli Takım", "Index", "TakimBrans", new { takim = WebProje.Models.Takim.MilliTakim, brans = WebProje.Models.Kategoriler.Basketbol }, new { @class = "dropdown-item" })
+                            @Html.ActionLink(@WebProje.Resources.Kaynak.MilliTakim, "Index", "TakimBrans", new { takim = WebProje.Models.Takim.MilliTakim, brans = WebProje.Models.Kategoriler.Basketbol }, new { @class = "dropdown-item" })
 
                         </div>
                     </li>
 
                     <li class="nav-item">
-                        @Html.ActionLink("Diğer Takımlar", "Index", "TakimBrans", new { takim = WebProje.Models.Takim.Diger, brans = WebProje.Models.Kategoriler.Futbol }, new { @class = "nav-link" })
+                        @Html.ActionLink(@WebProje.Resources.Kaynak.DigerTakimlar, "Index", "TakimBrans", new { takim = WebProje.Models.Takim.Diger, brans = WebProje.Models.Kategoriler.Futbol }, new { @class = "nav-link" })
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            İletişim
+                            @WebProje.Resources.Kaynak.Iletisim
                         </a>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
                             <a class="dropdown-item" href="full-width.html">Instagram</a>
@@ -69,11 +73,11 @@
 
                             <li class="nav-item">
 
-                                @Html.ActionLink("Çıkış Yap", "Cikis", "GirisYap", null, new { @Class = "nav-link" })
+                                @Html.ActionLink(@WebProje.Resources.Kaynak.CikisYap, "Cikis", "GirisYap", null, new { @Class = "nav-link" })
                             </li>
                             <li class="nav-item">
 
-                                @Html.Label("Giriş Yapılan Kullanıcı: "+HttpContext.Current.User.Identity.Name, new { @Class = "nav-link" })
+                                @Html.Label(@WebProje.Resources.Kaynak.GirisYapilanKullanici + HttpContext.Current.User.Identity.Name, new { @Class = "nav-link" })
                             </li>
 
                         }
@@ -81,16 +85,16 @@
                         {
                             <li class="nav-item">
 
-                                @Html.ActionLink("Kayıt Ol", "Create", "KayitOl", null, new { @Class = "nav-link" })
+                                @Html.ActionLink(@WebProje.Resources.Kaynak.KayitOl, "Create", "KayitOl", null, new { @Class = "nav-link" })
                             </li>
 
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Giriş
+                                    @WebProje.Resources.Kaynak.Giris
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
-                                    @Html.ActionLink("Üye Girişi", "UyeGiris", "GirisYap", null, new { @Class = "dropdown-item" })
-                                    @Html.ActionLink("Admin Girişi", "AdminGiris", "GirisYap", null, new { @Class = "dropdown-item" })
+                                    @Html.ActionLink(@WebProje.Resources.Kaynak.UyeGirisi, "UyeGiris", "GirisYap", null, new { @Class = "dropdown-item" })
+                                    @Html.ActionLink(@WebProje.Resources.Kaynak.AdminGirisi, "AdminGiris", "GirisYap", null, new { @Class = "dropdown-item" })
 
                                 </div>
                             </li>

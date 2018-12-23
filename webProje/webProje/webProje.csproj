@@ -242,6 +242,7 @@
     <Compile Include="Controllers\HatalarController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KayitOlController.cs" />
+    <Compile Include="Controllers\LanguageController.cs" />
     <Compile Include="Controllers\TakimBransController.cs" />
     <Compile Include="Controllers\UyeController.cs" />
     <Compile Include="DAL\DenemeData.cs" />
@@ -256,6 +257,16 @@
     <Compile Include="Models\Uye.cs" />
     <Compile Include="Models\Yorum.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\Kaynak.en.Designer.cs">
+      <DependentUpon>Kaynak.en.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Kaynak.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Kaynak.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
@@ -278,6 +289,7 @@
     <Content Include="Views\Uye\Details.cshtml" />
     <Content Include="Views\Uye\Edit.cshtml" />
     <Content Include="Views\Uye\Index.cshtml" />
+    <Content Include="Views\Language\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -293,6 +305,16 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Kaynak.en.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Kaynak.en.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Kaynak.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Kaynak.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

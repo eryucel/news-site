@@ -8,41 +8,41 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 <div class="container">
-    <h2>Haberler</h2>
+    <h2>@WebProje.Resources.Kaynak.Haberler</h2>
 
     <p>
-        @Html.ActionLink("Yeni Haber Ekle", "Create", "Haber", null, new { @class = "btn btn-primary btn-large" })
+        @Html.ActionLink(@WebProje.Resources.Kaynak.YeniHaberEkle, "Create", "Haber", null, new { @class = "btn btn-primary btn-large" })
     </p>
     @using (Html.BeginForm("Index", "Haber", FormMethod.Get))
     {
-        <p>
-            Başlığa göre bul: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
-            <input type="submit" value="Ara" />
-        </p>
+    <p>
+        @WebProje.Resources.Kaynak.BasligaGoreBul @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
+        <input type="submit" value="@WebProje.Resources.Kaynak.Ara" />
+    </p>
     }
 
     <table class="table table-striped table-bordered table-hover">
         <tr>
             <th>
-                @Html.ActionLink("Haber Başlığı", "Index", new { sortOrder = ViewBag.BaslikSortParm, currentFilter = ViewBag.CurrentFilter })
+                @Html.ActionLink(@WebProje.Resources.Kaynak.HaberBasligi, "Index", new { sortOrder = ViewBag.BaslikSortParm, currentFilter = ViewBag.CurrentFilter })
             </th>
             <th>
-                @Html.ActionLink("Ekleyen Kişi", "Index", new { sortOrder = ViewBag.EkleyenSortParm, currentFilter = ViewBag.CurrentFilter })
+                @Html.ActionLink(@WebProje.Resources.Kaynak.EkleyenKisi, "Index", new { sortOrder = ViewBag.EkleyenSortParm, currentFilter = ViewBag.CurrentFilter })
             </th>
             <th>
-                @Html.ActionLink("Kategori", "Index", new { sortOrder = ViewBag.KategoriSortParm, currentFilter = ViewBag.CurrentFilter })
+                @Html.ActionLink(@WebProje.Resources.Kaynak.Kategori, "Index", new { sortOrder = ViewBag.KategoriSortParm, currentFilter = ViewBag.CurrentFilter })
             </th>
             <th>
-                @Html.ActionLink("Haber Tarihi", "Index", new { sortOrder = ViewBag.TarihSortParm, currentFilter = ViewBag.CurrentFilter })
+                @Html.ActionLink(@WebProje.Resources.Kaynak.HaberTarihi, "Index", new { sortOrder = ViewBag.TarihSortParm, currentFilter = ViewBag.CurrentFilter })
             </th>
             <th>
-                @Html.ActionLink("Onay", "Index", new { sortOrder = ViewBag.OnaySortParm, currentFilter = ViewBag.CurrentFilter })
+                @Html.ActionLink(@WebProje.Resources.Kaynak.Onay, "Index", new { sortOrder = ViewBag.OnaySortParm, currentFilter = ViewBag.CurrentFilter })
             </th>
             <th>
-                @Html.ActionLink("Okunma Sayısı", "Index", new { sortOrder = ViewBag.OkunmaSortParm, currentFilter = ViewBag.CurrentFilter })
+                @Html.ActionLink(@WebProje.Resources.Kaynak.OkunmaSayisi, "Index", new { sortOrder = ViewBag.OkunmaSortParm, currentFilter = ViewBag.CurrentFilter })
             </th>
             <th>
-                İşlemler
+                @WebProje.Resources.Kaynak.Islemler
             </th>
         </tr>
 
@@ -65,15 +65,15 @@
                     @{
                         if (item.Onay == null)
                         {
-                            @("Belirtilmemiş");
+                            @(@WebProje.Resources.Kaynak.Belirtilmemis);
                         }
                         else if (item.Onay == true)
                         {
-                            @("Onaylanmış");
+                            @(@WebProje.Resources.Kaynak.Onaylanmis);
                         }
                         else
                         {
-                            @("Onaylanmamış")
+                            @(@WebProje.Resources.Kaynak.Onaylanmamış)
                         }
                     }
                 </td>
@@ -81,9 +81,9 @@
                     @Html.DisplayFor(modelItem => item.OkunmaSayisi)
                 </td>
                 <td>
-                    @Html.ActionLink("Düzenle", "Edit", new { id = item.HaberID }) |
-                    @Html.ActionLink("Haberi Gör", "Index", "HaberYonlendir", item, new { }) |
-                    @Html.ActionLink("Sil", "Delete", new { id = item.HaberID }, new { onclick ="return confirm('Bu haberi silmek istediğinize emin misiniz ?');"})
+                    @Html.ActionLink(@WebProje.Resources.Kaynak.Duzenle, "Edit", new { id = item.HaberID }) |
+                    @Html.ActionLink(@WebProje.Resources.Kaynak.HaberiGor, "Index", "HaberYonlendir", item, new { }) |
+                    @Html.ActionLink(@WebProje.Resources.Kaynak.Sil, "Delete", new { id = item.HaberID }, new { onclick ="return confirm('Bu haberi silmek istediğinize emin misiniz ?');"})
                 </td>
             </tr>
         }

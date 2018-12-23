@@ -9,36 +9,36 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-    <h2>Üyeler Listesi</h2>
+<h2>@WebProje.Resources.Kaynak.UyelerListesi</h2>
 
     <p>
-        @Html.ActionLink("Yeni Üye", "Create", null, new { @class = "btn btn-primary btn-large" })
+        @Html.ActionLink(@WebProje.Resources.Kaynak.YeniUye, "Create", null, new { @class = "btn btn-primary btn-large" })
     </p>
     <table class="table">
         <tr>
             <th>
-                @Html.ActionLink("Üye Adı", "Index", new { sortOrder = ViewBag.AdSortParm, currentFilter = ViewBag.CurrentFilter })
+                @Html.ActionLink(@WebProje.Resources.Kaynak.UyeAdi, "Index", new { sortOrder = ViewBag.AdSortParm, currentFilter = ViewBag.CurrentFilter })
             </th>
             <th>
-                @Html.ActionLink("Soyadı", "Index", new { sortOrder = ViewBag.SoyadSortParm, currentFilter = ViewBag.CurrentFilter })
+                @Html.ActionLink(@WebProje.Resources.Kaynak.Soyadi, "Index", new { sortOrder = ViewBag.SoyadSortParm, currentFilter = ViewBag.CurrentFilter })
             </th>
             <th>
-                @Html.ActionLink("Kullanıcı Adı", "Index", new { sortOrder = ViewBag.KulAdiSortParm, currentFilter = ViewBag.CurrentFilter })
+                @Html.ActionLink(@WebProje.Resources.Kaynak.KullaniciAdi, "Index", new { sortOrder = ViewBag.KulAdiSortParm, currentFilter = ViewBag.CurrentFilter })
             </th>
             <th>
-                @Html.ActionLink("EPosta", "Index", new { sortOrder = ViewBag.EPostaSortParm, currentFilter = ViewBag.CurrentFilter })
+                @Html.ActionLink(@WebProje.Resources.Kaynak.EPosta, "Index", new { sortOrder = ViewBag.EPostaSortParm, currentFilter = ViewBag.CurrentFilter })
             </th>
             <th>
-                @Html.ActionLink("Şifre", "Index", new { sortOrder = ViewBag.SifreSortParm, currentFilter = ViewBag.CurrentFilter })
+                @Html.ActionLink(@WebProje.Resources.Kaynak.Sifre, "Index", new { sortOrder = ViewBag.SifreSortParm, currentFilter = ViewBag.CurrentFilter })
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ElementAt(0).SifremiHatirla)
+                @WebProje.Resources.Kaynak.SifremiHatirla
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ElementAt(0).GirisYapildiMi)
+                @WebProje.Resources.Kaynak.GirisYapildiMi
             </th>
             <th>
-                @Html.ActionLink("Üyelik Tarihi", "Index", new { sortOrder = ViewBag.UyelikTarihiSortParm, currentFilter = ViewBag.CurrentFilter })
+                @Html.ActionLink(@WebProje.Resources.Kaynak.UyelikTarihi, "Index", new { sortOrder = ViewBag.UyelikTarihiSortParm, currentFilter = ViewBag.CurrentFilter })
             </th>
             <th></th>
         </tr>
@@ -71,9 +71,9 @@
                     @Html.DisplayFor(modelItem => item.UyelikTarihi)
                 </td>
                 <td>
-                    @Html.ActionLink("Düzenle", "Edit", new { id = item.UyeID }, new { @class = "btn btn-primary btn-large" }) |
-                    @Html.ActionLink("Detaylar", "Details", new { id = item.UyeID }, new { @class = "btn btn-primary btn-large" }) |
-                    @Html.ActionLink("Sil", "Delete", new { id = item.UyeID }, new { @class = "btn btn-primary btn-large" })
+                    @Html.ActionLink(@WebProje.Resources.Kaynak.Duzenle, "Edit", new { id = item.UyeID }, new { @class = "btn btn-primary btn-large" }) |
+                    @Html.ActionLink(@WebProje.Resources.Kaynak.Detaylar, "Details", new { id = item.UyeID }, new { @class = "btn btn-primary btn-large" }) |
+                    @Html.ActionLink(@WebProje.Resources.Kaynak.Sil, "Delete", new { id = item.UyeID }, new { @class = "btn btn-primary btn-large" })
                 </td>
             </tr>
         }

@@ -24,7 +24,7 @@
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                 <br /><br /><br /><br />
                 <img src="~/Content/Images/Resim1.png" alt="" />
-                <h3>Hoşgeldiniz</h3>
+                <h3>@WebProje.Resources.Kaynak.Hosgeldiniz</h3>
                 <br />
             </div>
             <div class="col-md-9 register-right">
@@ -33,13 +33,13 @@
                 </ul>
                 <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                        <h3 class="register-heading">Kayıt Formu</h3>
+                        <h3 class="register-heading">@WebProje.Resources.Kaynak.KayitFormu</h3>
                         <div class="row register-form">
                             <div class="col-md-6">
                                 <div class="form-group">
 
 
-                                    @Html.EditorFor(model => model.Ad, new { htmlAttributes = new { @class = "form-control", @placeholder = "Ad" } })
+                                    @Html.EditorFor(model => model.Ad, new { htmlAttributes = new { @class = "form-control", @placeholder = @WebProje.Resources.Kaynak.Ad } })
                                     @Html.ValidationMessageFor(model => model.Ad, "", new { @class = "text-danger" })
 
                                 </div>
@@ -49,7 +49,7 @@
                                 <div class="form-group">
 
 
-                                    @Html.EditorFor(model => model.Soyad, new { htmlAttributes = new { @class = "form-control", @placeholder = "Soyad" } })
+                                    @Html.EditorFor(model => model.Soyad, new { htmlAttributes = new { @class = "form-control", @placeholder = @WebProje.Resources.Kaynak.Soyad } })
                                     @Html.ValidationMessageFor(model => model.Soyad, "", new { @class = "text-danger" })
 
                                 </div>
@@ -70,7 +70,7 @@
                                 <div class="form-group">
 
 
-                                    @Html.EditorFor(model => model.KulAdi, new { htmlAttributes = new { @class = "form-control", @placeholder = "Kullanıcı Adı" } })
+                                    @Html.EditorFor(model => model.KulAdi, new { htmlAttributes = new { @class = "form-control", @placeholder = @WebProje.Resources.Kaynak.KullaniciAdi } })
                                     @Html.ValidationMessageFor(model => model.KulAdi, "", new { @class = "text-danger" })
 
                                 </div>
@@ -93,7 +93,7 @@
                                 <div class="form-group">
 
 
-                                    @Html.EditorFor(model => model.EPosta, new { htmlAttributes = new { @class = "form-control", @placeholder = "E-Posta" } })
+                                    @Html.EditorFor(model => model.EPosta, new { htmlAttributes = new { @class = "form-control", @placeholder = @WebProje.Resources.Kaynak.EPosta } })
                                     @Html.ValidationMessageFor(model => model.EPosta, "", new { @class = "text-danger" })
 
                                 </div>
@@ -101,7 +101,7 @@
                                 <div class="form-group">
 
 
-                                    @Html.EditorFor(model => model.Sifre, new { htmlAttributes = new { @class = "form-control", @placeholder = "Şifre", @type = "password" } })
+                                    @Html.EditorFor(model => model.Sifre, new { htmlAttributes = new { @class = "form-control", @placeholder = @WebProje.Resources.Kaynak.Sifre, @type = "password" } })
                                     @Html.ValidationMessageFor(model => model.Sifre, "", new { @class = "text-danger" })
 
                                 </div>
@@ -122,7 +122,7 @@
         <div class="form-group">
             <input type="text" class="form-control" placeholder="Enter Your Answer *" value="" />
         </div>*@
-                                <input type="submit" class="btnRegister" value="Kayıt Ol" />
+                                <input type="submit" class="btnRegister" value="@WebProje.Resources.Kaynak.KayitOl" />
                                 <br /><br />
                             </div>
                         </div>

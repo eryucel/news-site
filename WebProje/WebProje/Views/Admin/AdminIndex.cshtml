@@ -14,7 +14,7 @@
         <li class="nav-item">
             <p class="nav-link">
                 <i class="fas fa-fw fa-tachometer-alt"></i>
-                <span>Kullanıcı Adınız: @HttpContext.Current.User.Identity.Name</span>
+                <span>@WebProje.Resources.Kaynak.KullaniciAdiniz: @HttpContext.Current.User.Identity.Name</span>
             </p>
         </li> 
     </ul>
@@ -28,7 +28,7 @@
                 <li class="breadcrumb-item">
                     <a href="#">Admin</a>
                 </li>
-                <li class="breadcrumb-item active">Sayfası</li>
+                <li class="breadcrumb-item active">@WebProje.Resources.Kaynak.Sayfasi</li>
             </ol>
 
             <!-- Icon Cards-->
@@ -39,7 +39,7 @@
                             <div class="card-body-icon">
                                 <i class="fas fa-fw fa-comments"></i>
                             </div>
-                            <div class="mr-5">@Model.Uye.Count Üye</div>
+                            <div class="mr-5">@Model.Uye.Count @WebProje.Resources.Kaynak.Uye</div>
                         </div>
                     </div>
                 </div>
@@ -60,7 +60,7 @@
                             <div class="card-body-icon">
                                 <i class="fas fa-fw fa-shopping-cart"></i>
                             </div>
-                            <div class="mr-5">@Model.Haber.Count Haber</div>
+                            <div class="mr-5">@Model.Haber.Count @WebProje.Resources.Kaynak.Haber</div>
                         </div>
                        
                     </div>
@@ -71,7 +71,7 @@
                             <div class="card-body-icon">
                                 <i class="fas fa-fw fa-life-ring"></i>
                             </div>
-                            <div class="mr-5">@Model.Yorum.Count Yorum</div>
+                            <div class="mr-5">@Model.Yorum.Count @WebProje.Resources.Kaynak.Yorum</div>
                         </div>
                        
                     </div>
