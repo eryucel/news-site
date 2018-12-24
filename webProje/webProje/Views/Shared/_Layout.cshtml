@@ -42,7 +42,7 @@
                             @Html.ActionLink("Trabzonspor", "Index", "TakimBrans", new { takim = WebProje.Models.Takim.Trabzonspor, brans = WebProje.Models.Kategoriler.Futbol }, new { @class = "dropdown-item" })
                             @Html.ActionLink(@WebProje.Resources.Kaynak.MilliTakim, "Index", "TakimBrans", new { takim = WebProje.Models.Takim.MilliTakim, brans = WebProje.Models.Kategoriler.Futbol }, new { @class = "dropdown-item" })
                         </div>
-                    </liclass="nav-item>
+                    </li class="nav-item>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             @WebProje.Resources.Kaynak.Basketbol
@@ -79,7 +79,7 @@
                             </li>
                             <li class="nav-item">
 
-                                @Html.Label(@WebProje.Resources.Kaynak.GirisYapilanKullanici + HttpContext.Current.User.Identity.Name, new { @Class = "nav-link" })
+                                @Html.Label(@WebProje.Resources.Kaynak.GirisYapilanKullanici +" "+ HttpContext.Current.User.Identity.Name, new { @Class = "nav-link" })
                             </li>
 
                         }

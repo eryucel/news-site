@@ -303,4 +303,13 @@
   <data name="Dil" xml:space="preserve">
     <value>Dil</value>
   </data>
+  <data name="UyeYorumlari" xml:space="preserve">
+    <value>Üye Yorumları</value>
+  </data>
+  <data name="Yorumla" xml:space="preserve">
+    <value>Yorumla</value>
+  </data>
+  <data name="YorumunuzuYazabilirsiniz" xml:space="preserve">
+    <value>Yorumunuzu Yazabilirsiniz</value>
+  </data>
 </root>

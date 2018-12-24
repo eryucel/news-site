@@ -592,6 +592,15 @@ namespace WebProje.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Üye Yorumları.
+        /// </summary>
+        public static string UyeYorumlari {
+            get {
+                return ResourceManager.GetString("UyeYorumlari", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Yeni Haber Ekle.
         /// </summary>
         public static string YeniHaberEkle {
@@ -615,6 +624,24 @@ namespace WebProje.Resources {
         public static string Yorum {
             get {
                 return ResourceManager.GetString("Yorum", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Yorumla.
+        /// </summary>
+        public static string Yorumla {
+            get {
+                return ResourceManager.GetString("Yorumla", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Yorumunuzu Yazabilirsiniz.
+        /// </summary>
+        public static string YorumunuzuYazabilirsiniz {
+            get {
+                return ResourceManager.GetString("YorumunuzuYazabilirsiniz", resourceCulture);
             }
         }
     }
