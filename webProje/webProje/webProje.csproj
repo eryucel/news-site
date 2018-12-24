@@ -106,7 +106,9 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\dataTables.bootstrap4.min.js" />
     <Content Include="Content\HaberKonum.css" />
+    <Content Include="Content\Images\en.jpg" />
     <Content Include="Content\Images\Resim1.png" />
+    <Content Include="Content\Images\tr.png" />
     <Content Include="Content\kayit.css" />
     <Content Include="Content\modern-business.css" />
     <Content Include="Content\PagedList.css" />
@@ -242,7 +244,6 @@
     <Compile Include="Controllers\HatalarController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KayitOlController.cs" />
-    <Compile Include="Controllers\LanguageController.cs" />
     <Compile Include="Controllers\TakimBransController.cs" />
     <Compile Include="Controllers\UyeController.cs" />
     <Compile Include="DAL\DenemeData.cs" />
@@ -289,7 +290,6 @@
     <Content Include="Views\Uye\Details.cshtml" />
     <Content Include="Views\Uye\Edit.cshtml" />
     <Content Include="Views\Uye\Index.cshtml" />
-    <Content Include="Views\Language\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

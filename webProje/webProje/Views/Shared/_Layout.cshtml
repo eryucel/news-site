@@ -26,10 +26,10 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item dropdown">
-                    <li class="nav-item">
+                        @*<li class="nav-item">
 
-                        @Html.ActionLink(@WebProje.Resources.Kaynak.Dil, "Index", "Language", null, new { @Class = "nav-link" })
-                    </li>
+                @Html.ActionLink(@WebProje.Resources.Kaynak.Dil, "Index", "Language", null, new { @Class = "nav-link" })
+            </li>*@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             @WebProje.Resources.Kaynak.Futbol
@@ -42,7 +42,7 @@
                             @Html.ActionLink("Trabzonspor", "Index", "TakimBrans", new { takim = WebProje.Models.Takim.Trabzonspor, brans = WebProje.Models.Kategoriler.Futbol }, new { @class = "dropdown-item" })
                             @Html.ActionLink(@WebProje.Resources.Kaynak.MilliTakim, "Index", "TakimBrans", new { takim = WebProje.Models.Takim.MilliTakim, brans = WebProje.Models.Kategoriler.Futbol }, new { @class = "dropdown-item" })
                         </div>
-                    </li class="nav-item>
+                    </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             @WebProje.Resources.Kaynak.Basketbol
@@ -75,12 +75,13 @@
 
                             <li class="nav-item">
 
-                                @Html.ActionLink(@WebProje.Resources.Kaynak.CikisYap, "Cikis", "GirisYap", null, new { @Class = "nav-link" })
+                                @Html.Label(@WebProje.Resources.Kaynak.GirisYapilanKullanici + " " + HttpContext.Current.User.Identity.Name, new { @Class = "nav-link" })
                             </li>
                             <li class="nav-item">
 
-                                @Html.Label(@WebProje.Resources.Kaynak.GirisYapilanKullanici +" "+ HttpContext.Current.User.Identity.Name, new { @Class = "nav-link" })
+                                @Html.ActionLink(@WebProje.Resources.Kaynak.CikisYap, "Cikis", "GirisYap", null, new { @Class = "nav-link" })
                             </li>
+
 
                         }
                         else
@@ -102,6 +103,12 @@
                             </li>
                         }
                     }
+                    <li class="nav-item">
+                        <a href="@Url.Action("DilDegistir", "Home", new { LanguageAbbrevation = "tr" })"><img class="" style="position:relative;right:-380px; height: 25px; width: 25px;" src="~/Content/Images/tr.png" alt="Türkçe"></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="@Url.Action("DilDegistir", "Home", new { LanguageAbbrevation = "en" })"><img class="" style="position:relative;right:-385px;height: 25px; width: 25px;" src="~/Content/Images/en.jpg" alt="English"></a>
+                    </li>
 
 
 

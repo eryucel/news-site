@@ -20,5 +20,17 @@ namespace WebProje.Controllers
             };
             return View(model);
         }
+        public ActionResult DilDegistir(string LanguageAbbrevation)
+        {
+            if (LanguageAbbrevation != null)
+            {
+                Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture(LanguageAbbrevation);
+                Thread.CurrentThread.CurrentUICulture = new CultureInfo(LanguageAbbrevation);
+            }
+            HttpCookie cookie = new HttpCookie("Language");
+            cookie.Value = LanguageAbbrevation;
+            Response.Cookies.Add(cookie);
+            return RedirectToAction("Index");
+        }
     }
 }
