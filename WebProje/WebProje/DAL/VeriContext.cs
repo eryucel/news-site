@@ -13,6 +13,7 @@ namespace WebProje.DAL
         {
             Database.SetInitializer(new DenemeData());
         }
+        //--
         public DbSet<Admin> Adminler { get; set; }
         public DbSet<Haber> Haberler { get; set; }
         public DbSet<Uye> Uyeler { get; set; }
